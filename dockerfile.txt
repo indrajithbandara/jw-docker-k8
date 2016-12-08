@@ -1,0 +1,305 @@
+    3  ifconfig
+    4  clear
+    5  ls -ll
+    6  df -h
+    7  free -m
+    8  netstat -gap |grep 2222
+    9  netstat -ntlp
+   10  fdisk -l
+   11  ip addr
+   12  yum install net-tools
+   13  ifconfig
+   14  yum install openssh-server wget curl
+   15  netstat -ntlp
+   16  ifconfig
+   17  systemctl status firewalld.service
+   18  systemctl disable firewalld.service
+   19  getenforce
+   20  vi /etc/selinux/config
+   21  clear
+   22  setenforce 0
+   23  getenforce
+   24  yum install -y telnet 
+   25  yum install -y sendmail
+   26  fdisk -l
+   27  free -m
+   28  fdisk /dev/sda
+   29  clear
+   30  yum install epel-release-7
+   31  yum -y install docker-io
+   32  docker v
+   33  docker version
+   34  df -h
+   35  free -m
+   36  docker pull centos:latest
+   37  hostname
+   38  docker info
+   39  chkconfig docker on
+   40  service docker start
+   41  netstat -ntlp
+   42  hostname
+   43  docker info
+   44  docker pull centos:latest
+   45  docker images
+   46  docker run centos:0584b3d2cf6d /bin/echo ¡®hello docker¡®
+   47  docker images
+   48  docker run centos:0584b3d2cf6d /bin/echo ¡®hello docker¡®
+   49  pwd
+   50  cd /opt/
+   51  mkdir centosimage
+   52  cd centosimage/
+   53  touch Dockerfile
+   54  vi Dockerfile
+   55  docker images
+   56  sudo docker run -t -i centos:0584b3d2cf6d /bin/bash
+   57  service docker start
+   58  docker ps
+   59  docker images
+   60  docker run -t -i centos:0584b3d2cf6d /bin/bash
+   61  docker run -t -i centos:latest /bin/bash
+   62  ls -ll
+   63  docker ps -l
+   64  docker build -t="centos:latest" .
+   65  vi Dockerfile 
+   66  docker build -t="centos:latest" .
+   67  docker run -t -i centos:latest /bin/bash
+   68  history
+   69  clear
+   70  docker ps -l
+   71  sudo yum install openssh-server postfix cronie
+   72  service postfix start
+   73  chkconfig postfix on
+   74  lokkit -s http -s ssh
+   75  sudo lokkit -s http -s ssh
+   76  curl https://packages.gitlab.com/gpg.key 2> /dev/null | sudo apt-key add - &>/dev/null
+   77  vi /etc/yum.repos.d/gitlab-ce.repo
+   78  sudo yum makecache
+   79  firewall-cmd --permanent --add-service=http
+   80  yum install gitlab-ce
+   81  sudo gitlab-ctl reconfigure
+   82  netstat -ntlp
+   83  ifconfig
+   84  netstat -ntlp
+   85  free -m
+   86  netstat -ntlp
+   87  systemctl enable gitlab-runsvdir.service
+   88  systemctl start gitlab-runsvdir.service
+   89  gitlab-cmd start
+   90  netstat -ntlp
+   91  free -m
+   92  yum install -y git
+   93  git version
+   94  curl -sL -o /etc/yum.repos.d/khara-nodejs.repo https://copr.fedoraproject.org/coprs/khara/nodejs/repo/epel-7/khara-nodejs-epel-7.repo
+   95  yum install -y nodejs nodejs-npm
+   96  node -v
+   97  node -V
+   98  ls -ll
+   99  java -version
+  100  pwd
+  101  clear
+  102  yum install -y java
+  103  java -version
+  104  python -V
+  105  clear
+  106  ls -ll
+  107  netstat -ntlp
+  108  wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+  109  yum -y install apache-maven ant
+  110  mvn -v
+  111  ant -V
+  112  ant -version
+  113  clear
+  114  df -h
+  115  ifconfig
+  116  fdisk -l
+  117  df -h
+  118  fdisk -l
+  119  fdisk /dev/sdb
+  120  pvcreate /dev/sdb1
+  121  pvs
+  122  pvdisplay
+  123  vgdisplay
+  124  vgextend centos /dev/sdb1
+  125  vgdisplay
+  126  df -h
+  127  lvextend -L +8G /dev/mapper/centos-root
+  128  df -h
+  129  ls -ll /dev/rhel/root
+  130  ls -ll /dev/centos/root
+  131  xfs_growfs /dev/centos/root
+  132  df -h
+  133  history
+  134  clear
+  135  df -h
+  136  clear
+  137  ls -ll
+  138  cd /opt
+  139  ls -ll
+  140  yum install -y haproxy
+  141  yum install -y keepalived
+  142  whereis haproxy
+  143  whereis keepalived
+  144  netstat -ntlp
+  145  vim /etc/haproxy/haproxy.cfg
+  146  cd /etc/haproxy
+  147  ls
+  148  vi haproxy.cfg 
+  149  service haproxy start
+  150  netstat -ntlp
+  151  free -m
+  152  curl https://copr.fedoraproject.org/coprs/eparis/kubernetes-epel-7/repo/epel-7/eparis-kubernetes-epel-7-epel-7.repo -o /etc/yum.repos.d/eparis-kubernetes-epel-7-epel-7.repo
+  153  yum install -y kubernetes 
+  154  yum install kubernetes -y
+  155  yum update -y
+  156  reboot
+  157  ifconfig
+  158  clear
+  159  netstat -ntlp
+  160  docker info
+  161  whereis kebernetes
+  162  kubectl --help
+  163  gitlab-ctl reconfigure
+  164  service gitlab start
+  165  systemctl start gitlab.service
+  166  systemctl start gitlab
+  167  gitlab-ctl reconfigure
+  168  free -m
+  169  docker-compose --version
+  170  curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  171  chmod +x /usr/local/bin/docker-compose
+  172  docker-compose -version
+  173  clear
+  174  docker pull index.alauda.cn/googlecontainer/kube-ui:v5
+  175  docker ps
+  176  kubectl create -f namespace.yaml
+  177  kubectl get node
+  178  whereis kebernetes
+  179  ls -ll
+  180  cd /opt
+  181  ls
+  182  ls -ll
+  183  touch Dockerfile
+  184  vi Dockerfile 
+  185  ls -ll
+  186  chmod +x Dockerfile 
+  187  ls -ll
+  188  touch requirements.txt
+  189  vi requirements.txt 
+  190  touch app.py
+  191  vi app.py 
+  192  touch compose.yaml
+  193  vi compose.yaml 
+  194  mkdir dockercompose
+  195  ls -ll
+  196  mv app.py compose.yaml Dockerfile requirements.txt dockercompose/
+  197  ls -ll
+  198  cd dockercompose/
+  199  ls -ll
+  200  chmod 777 *
+  201  ls -ll
+  202  cd ..
+  203  ls -ll
+  204  free -m
+  205  docker pull registry
+  206  docker images
+  207  clear
+  208  docker images
+  209  yum update -y
+  210  cd /etc/yum.repos.d/
+  211  ls
+  212  ls -ll
+  213  rm -rf eparis-kubernetes-epel-7-epel-7.repo 
+  214  ls -ll
+  215  yum update -y
+  216  yum install kubernetes -y
+  217  kebernetes -V
+  218  kebernetes -v
+  219  kebernetes -version
+  220  kebernetes version
+  221  netstat -ntlp
+  222  yum install -y etcd 
+  223  netstat -ntlp
+  224  yum install -y ntp
+  225  yum install -y sendmail
+  226  free -m
+  227  df -h
+  228  yum install etcd -y
+  229  yum install kubernetes-node flannel -y
+  230  docker -v
+  231  docker pull swarm
+  232  docker images
+  233  vim /etc/sysconfig/docker
+  234  cd /etc/kubernetes/
+  235  ls
+  236  ls -ll
+  237  cat /etc/kubernetes/apiserver
+  238  clear
+  239  ls -ll
+  240  ifconfig
+  241  ifconfig
+  242  python -V
+  243  yum -y install MySQL-python mysql-devel
+  244  ifconfig
+  245  docker ps
+  246  docker images
+  247  docker pull registry:2.1.1
+  248  docker images
+  249  docker run -d -v /opt/registry:/var/lib/registry -p 5000:5000 --restart=always --name registry registry:2.1.1
+  250  docker ps
+  251  ifconfig
+  252  docker tag hello-world 127.0.0.1:5000/hello-world
+  253  clear
+  254  docker pull hello-world
+  255  docker images
+  256  docker tag hello-world 127.0.0.1:5000/hello-world
+  257  docker images
+  258  docker push 127.0.0.1:5000/hello-world
+  259  docker run hello-world
+  260  docker ps
+  261  clear
+  262  docker images
+  263  docker-machine ls
+  264  clear
+  265  netstat -ntlp
+  266  docker ps 
+  267  docker exec -it 0db7f22d63a4 /bin/bash
+  268  docker ps 
+  269  pwd
+  270  cd /opt
+  271  ls
+  272  cd registry/
+  273  ;s
+  274  ls
+  275  cd docker/
+  276  ls
+  277  cd registry/
+  278  ls
+  279  cd v2/
+  280  ls
+  281  cd repositories/
+  282  ls
+  283  ls -ll
+  284  cd hello-world/
+  285  ls
+  286  cd ..
+  287  ls -ll
+  288  free -m
+  289  java -version
+  290  go version
+  291  yum install golang
+  292  go version
+  293  python -V
+  294  node -v
+  295  node -V
+  296  npm -v
+  297  yum install nodejs
+  298  clear
+  299  df -h
+  300  docker pull ubuntu
+  301  docker images
+  302  df -h
+  303  free -m
+  304  df -h
+  305  netstat -ntlp
+  306  docker images
+  307  history
